@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+
+  "name": "Octo-Buddy",
+  "description": "This extension provides a way to manage pull requests and issues in Github.",
+  "version": "0.1",
+  "options_page": "options.html",
+
+  "permissions": [
+    "https://api.github.com/"
+  ],
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "octo-buddy.html"
+  }
+}

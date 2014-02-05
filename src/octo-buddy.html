@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+    <title>Octo Buddy</title>
+    <style>
+        body {
+            width: 300px;
+        }
+
+        h2 {
+            margin: 2px;
+            font-family: sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .pull {
+            border: solid 1px #ccc;
+            border-radius: 3px;
+            background-color: #ddd;
+            margin: 2px;
+            padding: 2px;
+            line-height: 20px;
+            vertical-align: middle;
+        }
+
+        .pull img {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+        }
+
+        .pull a span {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            vertical-align: middle;
+            width: 260px;
+            display: inline-block;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script src="jquery-2.1.0.min.js"></script>
+    <script src="mustache.js"></script>
+    <script src="octo-buddy.js"></script>
+</head>
+<body>
+<h2 class="hidden">My Pull Requests</h2>
+<div id="my-pulls"></div>
+<h2 class="hidden">Reviews Needed</h2>
+<div id="my-reviews"></div>
+<div id="needs-config" class="hidden">
+    Please configure your Github API token and user in the options.
+</div>
+</body>
+<script type="text/html" id="pull_template">
+    <div class="pull">
+        <img src="{{user.avatar_url}}">
+        <a href="{{html_url}}" target="_blank"><span>{{title}}</span></a>
+    </div>
+</script>
+</html>
+
+
