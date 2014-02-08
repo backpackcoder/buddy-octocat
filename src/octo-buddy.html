@@ -4,7 +4,8 @@
     <title>Octo Buddy</title>
     <style>
         body {
-            width: 300px;
+            width: 340px;
+            background-color: #ccc;
         }
 
         h2 {
@@ -15,7 +16,7 @@
         }
 
         .pull {
-            border: solid 1px #ccc;
+            border: solid 1px #eee;
             border-radius: 3px;
             background-color: #ddd;
             margin: 2px;
@@ -30,17 +31,30 @@
             vertical-align: middle;
         }
 
+        .pull a {
+            text-decoration: none;
+        }
+
         .pull a span {
             text-overflow: ellipsis;
             white-space: nowrap;
             overflow: hidden;
             vertical-align: middle;
-            width: 260px;
             display: inline-block;
+        }
+
+        .pull canvas {
+            height: 20px;
+            width: 20px;
+            vertical-align: middle;
         }
 
         .hidden {
             display: none;
+        }
+
+        .error {
+
         }
     </style>
     <script src="jquery-2.1.0.min.js"></script>
@@ -49,17 +63,23 @@
 </head>
 <body>
 <h2 class="hidden">My Pull Requests</h2>
-<div id="my-pulls"></div>
+<div id="pulls"></div>
 <h2 class="hidden">Reviews Needed</h2>
-<div id="my-reviews"></div>
+<div id="reviews"></div>
 <div id="needs-config" class="hidden">
     Please configure your Github API token and user in the options.
 </div>
+<div class="error"></div>
 </body>
 <script type="text/html" id="pull_template">
-    <div class="pull">
-        <img src="{{user.avatar_url}}">
-        <a href="{{html_url}}" target="_blank"><span>{{title}}</span></a>
+    <div id="pull_{{number}}" class="pull">
+        <img src="{{user.avatar_url}}" title="{{user.name}}">
+        <a href="{{html_url}}" target="_blank" title="{{title}}">
+                <span style="width: {{ext.width}}px">{{title}}</span>
+        </a>
+        {{#ext.reviewers}}
+        <img src="{{avatar_url}}" title="{{login}}">
+        {{/ext.reviewers}}
     </div>
 </script>
 </html>

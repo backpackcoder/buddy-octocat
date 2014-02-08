@@ -3,7 +3,7 @@
 
   "name": "Octo-Buddy",
   "description": "This extension provides a way to manage pull requests and issues in Github.",
-  "version": "0.1",
+  "version": "0.2",
   "options_page": "options.html",
 
   "permissions": [
