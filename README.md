@@ -1,5 +1,5 @@
-octo-buddy
-==========
+buddy-octocat
+=============
 
 A chrome extension for managing Github pull requests and issues
 
