@@ -56,6 +56,15 @@
         .error {
 
         }
+
+        #issues {
+            max-height: 300px;
+            overflow-x: auto;
+        }
+
+        #issues>.pull {
+            display: block;
+        }
     </style>
     <script src="jquery-2.1.0.min.js"></script>
     <script src="mustache.js"></script>
@@ -66,6 +75,8 @@
 <div id="pulls"></div>
 <h2 class="hidden">Reviews Needed</h2>
 <div id="reviews"></div>
+<h2>My Issues</h2>
+<div id="issues"></div>
 <div id="needs-config" class="hidden">
     Please configure your Github API token and user in the options page.
 </div>
